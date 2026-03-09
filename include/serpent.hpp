@@ -82,38 +82,6 @@ private:
         x0 = _rotr_512(x0, 13);
     }
 
-    inline void s_box_16(v128u* block, uint8_t s_box) {
-        v512u r0 { block[0][0], block[1][0], block[2][0], block[3][0], block[4][0], block[5][0], block[6][0], block[7][0], block[8][0], block[9][0], block[10][0], block[11][0], block[12][0], block[13][0], block[14][0], block[15][0] };
-        v512u r1 { block[0][1], block[1][1], block[2][1], block[3][1], block[4][1], block[5][1], block[6][1], block[7][1], block[8][1], block[9][1], block[10][1], block[11][1], block[12][1], block[13][1], block[14][1], block[15][1] };
-        v512u r2 { block[0][2], block[1][2], block[2][2], block[3][2], block[4][2], block[5][2], block[6][2], block[7][2], block[8][2], block[9][2], block[10][2], block[11][2], block[12][2], block[13][2], block[14][2], block[15][2] };
-        v512u r3 { block[0][3], block[1][3], block[2][3], block[3][3], block[4][3], block[5][3], block[6][3], block[7][3], block[8][3], block[9][3], block[10][3], block[11][3], block[12][3], block[13][3], block[14][3], block[15][3] };
-        
-        Bitsliced_SBoxes::call_specific<v512u>(r0, r1, r2, r3, s_box);
-
-        for(int i = 0; i < 16; ++i) {
-            block[i][0] = r0[i];
-            block[i][1] = r1[i];
-            block[i][2] = r2[i];
-            block[i][3] = r3[i];
-        }
-    }
-
-    inline void inv_s_box_16(v128u* block, uint8_t s_box) {
-        v512u r0 { block[0][0], block[1][0], block[2][0], block[3][0], block[4][0], block[5][0], block[6][0], block[7][0], block[8][0], block[9][0], block[10][0], block[11][0], block[12][0], block[13][0], block[14][0], block[15][0] };
-        v512u r1 { block[0][1], block[1][1], block[2][1], block[3][1], block[4][1], block[5][1], block[6][1], block[7][1], block[8][1], block[9][1], block[10][1], block[11][1], block[12][1], block[13][1], block[14][1], block[15][1] };
-        v512u r2 { block[0][2], block[1][2], block[2][2], block[3][2], block[4][2], block[5][2], block[6][2], block[7][2], block[8][2], block[9][2], block[10][2], block[11][2], block[12][2], block[13][2], block[14][2], block[15][2] };
-        v512u r3 { block[0][3], block[1][3], block[2][3], block[3][3], block[4][3], block[5][3], block[6][3], block[7][3], block[8][3], block[9][3], block[10][3], block[11][3], block[12][3], block[13][3], block[14][3], block[15][3] };
-        
-        Bitsliced_SBoxes::inv_call_specific<v512u>(r0, r1, r2, r3, s_box);
-
-        for(int i = 0; i < 16; ++i) {
-            block[i][0] = r0[i];
-            block[i][1] = r1[i];
-            block[i][2] = r2[i];
-            block[i][3] = r3[i];
-        }
-    }
-
     void process_16_blocks(v128u* blocks) {
         uint8_t curr_sbox = 0;
 
