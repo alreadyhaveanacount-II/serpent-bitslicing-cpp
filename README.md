@@ -1,4 +1,4 @@
-# ChaCha20-Poly1305 AEAD
+# Serpent
 
 ## Languages(Linguagens)
 - [English](README.en.md)
