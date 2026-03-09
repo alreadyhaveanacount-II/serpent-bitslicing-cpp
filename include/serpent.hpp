@@ -117,48 +117,6 @@ private:
         }
     }
 
-    void deprocess_16_blocks(v128u* blocks) {
-        // Useless for CTR, just here for fun
-
-        v512u r0, r1, r2, r3;
-        for(int i = 0; i < 16; ++i) {
-            r0[i] = blocks[i][0]; r1[i] = blocks[i][1];
-            r2[i] = blocks[i][2]; r3[i] = blocks[i][3];
-        }
-
-        r0 ^= (v512u)subkeys[32][0];
-        r1 ^= (v512u)subkeys[32][1];
-        r2 ^= (v512u)subkeys[32][2];
-        r3 ^= (v512u)subkeys[32][3];
-
-        Bitsliced_SBoxes::inv_call_specific<v512u>(r0, r1, r2, r3, 7);
-
-        r0 ^= (v512u)subkeys[31][0];
-        r1 ^= (v512u)subkeys[31][1];
-        r2 ^= (v512u)subkeys[31][2];
-        r3 ^= (v512u)subkeys[31][3];
-
-        int curr_sbox = 6;
-
-        for(int i = 30; i >= 0; --i) {
-            inv_linear_transform(r0, r1, r2, r3);
-
-            Bitsliced_SBoxes::inv_call_specific<v512u>(r0, r1, r2, r3, curr_sbox);
-
-            r0 ^= (v512u)subkeys[i][0];
-            r1 ^= (v512u)subkeys[i][1];
-            r2 ^= (v512u)subkeys[i][2];
-            r3 ^= (v512u)subkeys[i][3];
-
-            curr_sbox = (curr_sbox + 8 - 1) & 7;
-        }
-
-        for(int i = 0; i < 16; ++i) {
-            blocks[i][0] = r0[i]; blocks[i][1] = r1[i];
-            blocks[i][2] = r2[i]; blocks[i][3] = r3[i];
-        }
-    }
-
 public:
     // 12 bytes of IV + 4 bytes of counter
 
