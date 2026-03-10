@@ -22,6 +22,7 @@ ninja
 ```
 
 > **Nota para usuários Windows:** Certifique-se de que `clang++` e `ninja` estejam no seu PATH. Este projeto utiliza instruções AVX2 através do vetorizador SLP do Clang para alcançar 3.4 CPB.
+
 > **Se você estiver no Linux:** Se o `clang++` e o `ninja` não estiverem instalados, use o comando: `sudo apt update && sudo apt install clang ninja-build`
 
 
