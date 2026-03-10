@@ -45,6 +45,8 @@ ninja
 ## Security Notes
 
 - **Educational / Experimental**: Not intended for production use.
+- **Constant-time**: The implementation avoids all data-dependent branching and memory access patterns.
+- **Verified against test vectors**: Verified against the [official test vectors](https://biham.cs.technion.ac.il).
 - **PractRand Validated**: Passed 1GB+ testing with no significant anomalies (10k+ tests).
 
 ---
@@ -53,8 +55,6 @@ ninja
 
 - **Bitslicing**: Processes multiple blocks simultaneously by transposing data into bit-planes for SIMD-like efficiency.
 - **Linear Transformation**: Optimized to maintain diffusion while staying within the bitsliced domain.
-- **Constant-time**: The implementation avoids all data-dependent branching and memory access patterns.
-- **Verified against test vectors**: Verified against the [official test vectors](https://biham.cs.technion.ac.il).
 
 
 ---
