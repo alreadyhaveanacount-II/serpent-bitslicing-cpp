@@ -45,7 +45,6 @@ ninja
 ## Notas de Segurança
 
 - **Educacional / Experimental**: Não destinado para uso em produção.
-- **Canais Laterais**: Não auditado para tempo constante; suscetível a ataques de temporização.
 - **Validado com PractRand**: Testado com mais de 1GB sem anomalias significativas (mais de 10.000 testes).
 - **Não verificado contra vetores de teste**: Não pude achar vetores de teste para o Serpent, pode não ser uma implementação padrão
 
@@ -55,6 +54,7 @@ ninja
 
 - **Fatiamento de Bits**: Processa múltiplos blocos simultaneamente através da transposição de dados em planos de bits para eficiência similar a SIMD.
 - **Transformação Linear**: Otimizada para manter a difusão enquanto permanece no domínio do fatiamento de bits.
+- **Tempo de execução constante**: A implementação evita qualquer desvio de fluxo (branching) ou padrão de acesso à memória que dependa de dados sensíveis.
 
 ---
 
