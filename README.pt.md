@@ -1,6 +1,6 @@
 # Serpent
 
-Uma implementação de alto desempenho do Serpent usando fatiamento de bits para performance extrema
+Uma implementação de alta performance do Serpent com bitslicing, otimizada para arquiteturas AVX2.
 
 ---
 ## Compilação
