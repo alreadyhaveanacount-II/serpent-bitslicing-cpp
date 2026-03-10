@@ -46,7 +46,8 @@ ninja
 
 - **Educacional / Experimental**: Não destinado para uso em produção.
 - **Validado com PractRand**: Testado com mais de 1GB sem anomalias significativas (mais de 10.000 testes).
-- **Não verificado contra vetores de teste**: Não pude achar vetores de teste para o Serpent, pode não ser uma implementação padrão
+- **Verificado contra vetores de teste**: Verificado contra [vetores de teste oficiais](https://biham.cs.technion.ac.il).
+
 
 ---
 
