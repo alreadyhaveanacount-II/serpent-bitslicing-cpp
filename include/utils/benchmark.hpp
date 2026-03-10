@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <cstdint>
 #include <stdexcept>
@@ -16,6 +16,8 @@
 #include <Windows.h>
 #elif defined(__linux__) || defined(__GLIBC__)
 #include <sched.h>
+#include <emmintrin.h>
+#include <x86intrin.h>
 #endif
 
 
