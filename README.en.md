@@ -1,6 +1,6 @@
 # Serpent
 
-A high performance Serpent implementation using bitslicing for extreme performance
+A high-performance bitsliced Serpent implementation optimized for AVX2 architectures.
 
 ---
 ## Building
