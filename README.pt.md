@@ -62,6 +62,8 @@ ninja
 
 ## Resultados de Performance
 
+**Nota: Benchmarks realizados em um Intel i5-1334U. Os resultados refletem o desempenho sem instruções AVX-512, utilizando conjuntos de instruções padrão AVX/AVX2.**
+
 ```
 =======================================================
  Testes de performance do Serpent
