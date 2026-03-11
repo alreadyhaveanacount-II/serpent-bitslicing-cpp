@@ -21,7 +21,7 @@ cmake .. -G "Ninja" -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release
 ninja
 ```
 
-> **Note for Windows users:** Ensure `clang++` and `ninja` are in your PATH. This project leverages AVX2 instructions via Clang's SLP vectorizer to achieve 3.4 CPB.
+> **Note for Windows users:** Ensure `clang++` and `ninja` are in your PATH.
 
 > **If you're on Linux:** If clang `clang++` and `ninja` are not installed, use the command: `sudo apt update && sudo apt install clang ninja-build`
 
