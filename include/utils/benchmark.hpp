@@ -1,10 +1,7 @@
-// This code was taken from my ChaCha20 implementation i made in MSVC, so it may look a bit off
-
 #pragma once
 
 #include <cstdint>
 #include <stdexcept>
-#define NOMINMAX
 #include <chrono>
 #include <limits>
 #include <numeric>
