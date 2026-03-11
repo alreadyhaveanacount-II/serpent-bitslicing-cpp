@@ -1,4 +1,5 @@
 #include "../include/serpent.hpp"
+#include "../include/utils/benchmark.hpp"
 #include <cstdlib>
 #include <vector>
 #include <iostream>
@@ -55,12 +56,12 @@ bool test_vec_1() {
     v128u diff = v_ct ^ v_exp;
 
     if ((diff[0] | diff[1] | diff[2] | diff[3]) != 0) {
-        std::cerr << "[-] Teste 1 FALHOU! Diferença detectada." << std::endl;
-        print_hex("Obtido", ct);
+        std::cerr << "[-] Test 1 FAILED!" << std::endl;
+        print_hex("Obtained", ct);
         return false;
     }
 
-    std::cout << "[+] Teste 1 PASSOU! 128-bit XOR verification OK." << std::endl;
+    std::cout << "[+] Test 1 PASSED!" << std::endl;
     return true;
 }
 
@@ -104,12 +105,12 @@ bool test_vec_2() {
     v128u diff = v_ct ^ v_exp;
 
     if ((diff[0] | diff[1] | diff[2] | diff[3]) != 0) {
-        std::cerr << "[-] Teste 2 FALHOU! Diferença detectada." << std::endl;
-        print_hex("Obtido", ct);
+        std::cerr << "[-] Test 2 FAILED!" << std::endl;
+        print_hex("Obtained", ct);
         return false;
     }
 
-    std::cout << "[+] Teste 2 PASSOU! 128-bit XOR verification OK." << std::endl;
+    std::cout << "[+] Test 2 PASSED!" << std::endl;
     return true;
 }
 
@@ -152,14 +153,13 @@ bool test_vec_3() {
     v128u v_exp = *reinterpret_cast<const v128u*>(expected.data());
     v128u diff = v_ct ^ v_exp;
 
-    // Verificação rápida de 128 bits
     if ((diff[0] | diff[1] | diff[2] | diff[3]) != 0) {
-        std::cerr << "[-] Teste 3 FALHOU!" << std::endl;
-        print_hex("Obtido", ct);
+        std::cerr << "[-] Test 3 FAILED!" << std::endl;
+        print_hex("Obtained", ct);
         return false;
     }
 
-    std::cout << "[+] Teste 3 PASSOU! Chave complexa validada." << std::endl;
+    std::cout << "[+] Test 3 PASSED!" << std::endl;
     return true;
 }
 
@@ -169,5 +169,9 @@ int main() {
     test_vec_2();
     test_vec_3();
 
+    // Benchmarking::set_high_priority();
+    // Benchmarking::test_cipher();
+    // Uncomment above lines to benchmark code
+    
     return EXIT_SUCCESS;
 }
