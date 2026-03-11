@@ -9,7 +9,7 @@ if(MSVC)
     add_compile_options(/O2 /Oi /Ot /Gy /arch:AVX512 /Wall)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 else()
-    add_compile_options(-O3 -march=native -mprefer-vector-width=512 -fno-plt)
+    add_compile_options(-O3 -march=native -DNOMINMAX -mprefer-vector-width=512 -fno-plt)
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
