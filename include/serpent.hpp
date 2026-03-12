@@ -47,8 +47,7 @@ union alignas(16) Serpent_IV {
     #define PRAGMA_UNROLL_16 _Pragma("GCC unroll 16")
     #define PRAGMA_UNROLL_FULL _Pragma("GCC unroll 32")
 #else
-    #define PRAGMA_UNROLL_16
-    #define PRAGMA_UNROLL_FULL
+    #error "Compiler not supported, use GCC or Clang"
 #endif
 
 struct Serpent {
