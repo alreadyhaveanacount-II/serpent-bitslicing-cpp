@@ -69,20 +69,20 @@ ninja
  Testes de performance do Serpent
 =======================================================
 [ TAXA DE TRANSFERÊNCIA ]
-  Melhor: 828.6635MB/s
-  Pior: 507.3309MB/s
-  Média: 778.8970MB/s
-  Amplitude: 321.3325MB/s
-  IIQ: 26.3642MB/s
+  Melhor: 829.2648MB/s
+  Pior:  610.4028MB/s
+  Média: 799.8079MB/s
+  Amplitude: 218.8620MB/s
+  IIQ: 37.0288MB/s
 
 [ TEMPO (segundos) ]
-  Menor: 0.0097s
-  Maior: 0.0158s
-  Média: 0.0104s
-  Amplitude: 0.0061s
-  IIQ: 0.0003s
+  Menor: 0.0096s
+  Maior: 0.0131s
+  Média: 0.0100s
+  Amplitude: 0.0035s
+  IIQ: 0.0005s
 
 [ EFICIÊNCIA ]
-  CPB médio: 3.0974 c/B
+  CPB médio: 2.9850 c/B
 =======================================================
 ```
