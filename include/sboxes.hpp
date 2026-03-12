@@ -13,8 +13,15 @@
  * @see https://asmaes.sourceforge.net/serpent/serpentImplementation.pdf
  */
 
-typedef uint32_t v512u __attribute__((ext_vector_type(16)));
-typedef uint32_t v128u __attribute__((ext_vector_type(4)));
+#if defined(__clang__)
+    typedef uint32_t v512u __attribute__((ext_vector_type(16)));
+    typedef uint32_t v128u __attribute__((ext_vector_type(4)));
+#elif defined(__GNUC__)
+    typedef uint32_t v512u __attribute__((vector_size(64)));
+    typedef uint32_t v128u __attribute__((vector_size(16)));
+#else
+    #error "Compiler not supported, use GCC or Clang"
+#endif
 
 /**
  * @namespace Bitsliced_SBoxes
