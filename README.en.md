@@ -69,19 +69,19 @@ ninja
  Serpent performance tests
 =======================================================
 [ THROUGHPUT ]
-  Best:                         828.6635MB/s
-  Worst:                        507.3309MB/s
-  Average:                      778.8970MB/s
-  Amplitude:                    321.3325MB/s
-  IQR:                           26.3642MB/s
+  Best:                         829.2648MB/s
+  Worst:                        610.4028MB/s
+  Average:                      799.8079MB/s
+  Amplitude:                    218.8620MB/s
+  IQR:                           37.0288MB/s
 
 [ TIME (seconds) ]
-  Smallest:                       0.0097s
-  Biggest:                        0.0158s
-  Average:                        0.0104s
-  Amplitude:                      0.0061s
-  IQR:                            0.0003s
+  Smallest:                       0.0096s
+  Biggest:                        0.0131s
+  Average:                        0.0100s
+  Amplitude:                      0.0035s
+  IQR:                            0.0005s
 [ EFFICIENCY ]
-  Average CPB:                    3.0974 c/B
+  Average CPB:                    2.9850 c/B
 =======================================================
 ```
