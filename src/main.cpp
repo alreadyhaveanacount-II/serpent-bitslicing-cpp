@@ -165,12 +165,12 @@ bool test_vec_3() {
 
 
 int main() {
-    test_vec_1();
-    test_vec_2();
-    test_vec_3();
+    // test_vec_1();
+    // test_vec_2();
+    // test_vec_3();
 
-    // Benchmarking::set_high_priority();
-    // Benchmarking::test_cipher();
+    Benchmarking::set_high_priority();
+    Benchmarking::test_cipher();
     // Uncomment above lines to benchmark code
     
     return EXIT_SUCCESS;
