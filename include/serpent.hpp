@@ -15,7 +15,7 @@
  * This implementation manages to process 16 blocks in parallel using bitslicing techniques
  * reaching a theoretical max of ~1.5 C/B (If your CPU supports AVX-512), or ~3 C/B (If your CPU doesn't support AVX-512)
  * 
- * @author Leonardo
+ * @author Leonardo Farias
  * @date 2026
  */
 
