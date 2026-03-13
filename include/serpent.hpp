@@ -12,7 +12,7 @@
  * @brief High performance implementation of Serpent using bitslice and 512-bit registers
  * 
  * This implementation manages to process 16 blocks in parallel using bitslicing techniques
- * reaching a theoretical max of ~1.5 C/B (If your CPU supports AVX-512), or ~3 C/B (If your CPU doesn't support AVX-512)
+ * reaching a theoretical max of ~1.5 C/B (If your CPU supports AVX-512), or 2.9850 C/B (If your CPU doesn't support AVX-512)
  * 
  * @author Leonardo Farias
  * @date 2026
