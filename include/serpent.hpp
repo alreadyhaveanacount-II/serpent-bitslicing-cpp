@@ -5,7 +5,6 @@
 #include <bit>
 #include <span>
 #include "sboxes.hpp"
-#include <array>
 #include "./utils/mem_utils.hpp"
 
 /**
